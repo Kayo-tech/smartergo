@@ -1,0 +1,60 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="theme-color" content="#4285f4">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>Pose Detection with MediaPipe</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <header>
+    <h1>Pose Detection with MediaPipe</h1>
+    <p>Upload an image or video to analyze body posture using AI</p>
+  </header>
+
+  <main>
+    <section id="image-upload-section">
+      <h2><i class="fas fa-upload"></i> Upload Media</h2>
+      <div class="upload-container">
+        <label for="imageUpload" class="upload-button"><i class="fas fa-image"></i> Image</label>
+        <input type="file" id="imageUpload" accept="image/*" hidden>
+        <label for="videoUpload" class="upload-button"><i class="fas fa-video"></i> Video</label>
+        <input type="file" id="videoUpload" accept="video/*" hidden>
+      </div>
+      <div id="imageContainer" class="image-container">
+        <i class="fas fa-cloud-upload-alt" style="font-size: 2.5rem; color: #4285f4; margin-bottom: 10px;"></i>
+        <p id="uploadHint">Tap to upload or drag files here</p>
+      </div>
+    </section>
+    
+    <section id="demos" class="invisible">
+      <div id="detectionInfo" class="detection-info" style="display: none;"></div>
+      <div id="resultContainer" class="result-container">
+        <div id="imageResult"></div>
+        <div id="videoResult" style="display: none;">
+          <video id="video" controls style="width: 100%; height: auto;"></video>
+        </div>
+        <canvas id="output_canvas" class="canvas"></canvas>
+      </div>
+      <div id="landmarkInfo" class="landmark-info" style="display: none; margin-top: 10px; padding: 15px; background-color: #f8f9fa; border-radius: 8px; border-left: 5px solid #4285f4;"></div>
+      <div id="videoControls" style="display: none; margin-top: 15px; text-align: center;">
+        <button id="playPauseButton" class="control-button" data-state="play"><i class="fas fa-play"></i> Play</button>
+        <button id="prevFrameButton" class="control-button"><i class="fas fa-step-backward"></i> Prev Frame</button>
+        <button id="nextFrameButton" class="control-button"><i class="fas fa-step-forward"></i> Next Frame</button>
+        <div id="frameCounter" style="margin-top: 10px; font-weight: 500;">Frame: 0/0</div>
+      </div>
+      <div id="rulaAnalysis" class="rula-analysis" style="display: none;"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Powered by MediaPipe | <i class="fas fa-code"></i> AI-Assisted Posture Analysis</p>
+  </footer>
+
+  <script type="module" src="config.js"></script>
+  <script type="module" src="script.js"></script>
+</body>
+</html>
