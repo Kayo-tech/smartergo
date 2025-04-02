@@ -390,10 +390,6 @@ async function detectPose(imageElement) {
     
     // Display landmark information below canvas
     if (result.landmarks.length > 0) {
-      
-      
-      // Show additional assessment form
-      showErgonomicAssessmentForm();
 
       displayLandmarkInfo(result.landmarks[0], imageElement.width, imageElement.height);
     } else {
