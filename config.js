@@ -1,11 +1,11 @@
 // Configuration settings that can be easily modified
 export const config = {
   // Model configuration
-  modelAssetPath: 'https://storage.googleapis.com/mediapipe-models/pose_landmarker/pose_landmarker_lite/float16/1/pose_landmarker_lite.task',
+  modelAssetPath: 'https://storage.googleapis.com/mediapipe-models/pose_landmarker/pose_landmarker_heavy/float16/latest/pose_landmarker_heavy.task',
   delegate: 'GPU',
   
   // Number of poses to detect
-  numPoses: 1,
+  numPoses: 3,
   
   // Additional detection parameters
   minPoseDetectionConfidence: 0.5,
