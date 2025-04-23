@@ -5,28 +5,28 @@
   <meta name="theme-color" content="#4285f4">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <title>Pose Detection with MediaPipe</title>
+  <title>SmartErgo</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
   <header>
     <h1>SmartErgo</h1>
-    <p>Upload an image or video to analyze body posture using AI</p>
+    <p>Analise ergometrica automatizada utilisando método RULA</p>
   </header>
 
   <main>
     <section id="image-upload-section">
-      <h2><i class="fas fa-upload"></i> Upload Media</h2>
+      <h2><i class="fas fa-upload"></i> Faça o upload</h2>
       <div class="upload-container">
-        <label for="imageUpload" class="upload-button"><i class="fas fa-image"></i> Image</label>
+        <label for="imageUpload" class="upload-button"><i class="fas fa-image"></i> Imagem</label>
         <input type="file" id="imageUpload" accept="image/*" hidden>
-        <label for="videoUpload" class="upload-button"><i class="fas fa-video"></i> Video</label>
+        <label for="videoUpload" class="upload-button"><i class="fas fa-video"></i> Vídeo</label>
         <input type="file" id="videoUpload" accept="video/*" hidden>
       </div>
       <div id="imageContainer" class="image-container">
-        <i class="fas fa-cloud-upload-alt" style="font-size: 2.5rem; color: #4285f4; margin-bottom: 10px;"></i>
-        <p id="uploadHint">Tap to upload or drag files here</p>
+        <i class="fa-solid fa-bell" style="font-size: 2.5rem; color: #4285f4; margin-bottom: 10px;"></i>
+        <p id="uploadHint">Faça o upload de uma imagem ou video para dar inicio a analise</p>
       </div>
     </section>
     

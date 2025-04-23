@@ -67,7 +67,7 @@ imageUpload.addEventListener("change", async (event) => {
   if (event.target.files && event.target.files[0]) {
     // Wait for model to load if it hasn't already
     if (!poseLandmarker) {
-      alert("Please wait for the model to load.");
+      alert("Por favor, aguarde o modelo carregar! Deve levar 15 segundos");
       return;
     }
 
@@ -98,7 +98,7 @@ imageUpload.addEventListener("change", async (event) => {
       }
 
       // Show loading indicator
-      imageContainer.innerHTML = '<div style="text-align:center;"><i class="fas fa-spinner fa-spin" style="font-size: 2rem; color: #4285f4;"></i><p>Processing image...</p></div>';
+      imageContainer.innerHTML = '<div style="text-align:center;"><i class="fas fa-spinner fa-spin" style="font-size: 2rem; color: #4285f4;"></i><p>Processando imagem...</p></div>';
 
       // Display the uploaded image
       const file = event.target.files[0];
@@ -113,7 +113,7 @@ imageUpload.addEventListener("change", async (event) => {
         canvasElement.style.height = "auto";
         
         // Move image from container to result area
-        imageContainer.innerHTML = '<i class="fas fa-cloud-upload-alt" style="font-size: 3rem; color: #4285f4; margin-bottom: 15px;"></i><p id="uploadHint">Drag and drop an image or video here or click the buttons above</p>';
+        imageContainer.innerHTML = '<i class="fa-solid fa-triangle-exclamation" style="font-size: 3rem; color: #4285f4; margin-bottom: 15px;"></i><p id="uploadHint">Arquivo processado com sucesso! Após detectar a pose, responda o questionario abaixo!</p>';
         
         // Hide the image in imageResult since we'll draw it directly on canvas
         imageResult.innerHTML = '';
@@ -136,7 +136,7 @@ videoUpload.addEventListener("change", async (event) => {
   if (event.target.files && event.target.files[0]) {
     // Wait for model to load if it hasn't already
     if (!poseLandmarker) {
-      alert("Please wait for the model to load.");
+      alert("Por favor, aguarde o modelo carregar! Deve levar 15 segundos");
       return;
     }
 
@@ -159,7 +159,7 @@ videoUpload.addEventListener("change", async (event) => {
       imageResult.innerHTML = '';
       
       // Show loading indicator
-      imageContainer.innerHTML = '<div style="text-align:center;"><i class="fas fa-spinner fa-spin" style="font-size: 2rem; color: #4285f4;"></i><p>Processing video...</p></div>';
+      imageContainer.innerHTML = '<div style="text-align:center;"><i class="fas fa-spinner fa-spin" style="font-size: 2rem; color: #4285f4;"></i><p>Processando vídeo...</p></div>';
 
       // Hide image result and show video result
       imageResult.style.display = "none";
@@ -178,7 +178,7 @@ videoUpload.addEventListener("change", async (event) => {
         canvasElement.style.height = "auto";
         
         // Reset container
-        imageContainer.innerHTML = '<i class="fas fa-cloud-upload-alt" style="font-size: 3rem; color: #4285f4; margin-bottom: 15px;"></i><p id="uploadHint">Drag and drop an image or video here or click the buttons above</p>';
+        imageContainer.innerHTML = '<i class="fa-solid fa-triangle-exclamation" style="font-size: 3rem; color: #4285f4; margin-bottom: 15px;"></i><p id="uploadHint">Arquivo processado com sucesso! Após detectar a pose, responda o questionario abaixo!</p>';
         
         // Update detection info
         const detectionInfo = document.getElementById("detectionInfo");
@@ -188,7 +188,7 @@ videoUpload.addEventListener("change", async (event) => {
             <div>
               <p><strong>Media Type:</strong> Video</p>
               <p><strong>Running Mode:</strong> ${runningMode}</p>
-              <p><strong>Duration:</strong> ${Math.round(videoElement.duration)} seconds</p>
+              <p><strong>Duração:</strong> ${Math.round(videoElement.duration)} segundos</p>
             </div>
           </div>
         `;
@@ -352,7 +352,7 @@ async function detectPose(imageElement) {
       <div style="display: flex; align-items: center; flex-wrap: wrap;">
         <i class="fas fa-info-circle" style="font-size: 1.5rem; color: #4285f4; margin-right: 10px;"></i>
         <div>
-          <p><strong>Number of poses detected:</strong> ${result.landmarks.length}</p>
+          <p><strong>Número de poses detectadas:</strong> ${result.landmarks.length}</p>
           <p><strong>Running Mode:</strong> ${runningMode}</p>
         </div>
       </div>
