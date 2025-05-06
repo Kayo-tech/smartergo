@@ -113,7 +113,7 @@ imageUpload.addEventListener("change", async (event) => {
         canvasElement.style.height = "auto";
         
         // Move image from container to result area
-        imageContainer.innerHTML = '<i class="fa-solid fa-triangle-exclamation" style="font-size: 3rem; color: #4285f4; margin-bottom: 15px;"></i><p id="uploadHint">Arquivo processado com sucesso! Após detectar a pose, responda o questionario abaixo!</p>';
+        imageContainer.innerHTML = '<i class="fa-solid fa-triangle-exclamation" style="font-size: 3rem; color: #4285f4; margin-bottom: 15px;"></i><p id="uploadHint">Arquivo processado com sucesso! Após detectar a postura, responda o questionário abaixo!</p>';
         
         // Hide the image in imageResult since we'll draw it directly on canvas
         imageResult.innerHTML = '';
@@ -178,7 +178,7 @@ videoUpload.addEventListener("change", async (event) => {
         canvasElement.style.height = "auto";
         
         // Reset container
-        imageContainer.innerHTML = '<i class="fa-solid fa-triangle-exclamation" style="font-size: 3rem; color: #4285f4; margin-bottom: 15px;"></i><p id="uploadHint">Arquivo processado com sucesso! Após detectar a pose, responda o questionario abaixo!</p>';
+        imageContainer.innerHTML = '<i class="fa-solid fa-triangle-exclamation" style="font-size: 3rem; color: #4285f4; margin-bottom: 15px;"></i><p id="uploadHint">Arquivo processado com sucesso! Após detectar a postura, responda o questionario abaixo!</p>';
         
         // Update detection info
         const detectionInfo = document.getElementById("detectionInfo");
@@ -352,7 +352,7 @@ async function detectPose(imageElement) {
       <div style="display: flex; align-items: center; flex-wrap: wrap;">
         <i class="fas fa-info-circle" style="font-size: 1.5rem; color: #4285f4; margin-right: 10px;"></i>
         <div>
-          <p><strong>Número de poses detectadas:</strong> ${result.landmarks.length}</p>
+          <p><strong>Número de posturas detectadas:</strong> ${result.landmarks.length}</p>
           <p><strong>Running Mode:</strong> ${runningMode}</p>
         </div>
       </div>
